@@ -1,0 +1,142 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+/*Her opretter prototyper af det funktion vi får brug for,
+jeg føler at man kunne undlade og bruge do_next_op da jeg man kan  gøre det mere over skuligt med 2*/
+void scan_data(char(*), double(*));
+void do_next_op(char(*), double(*), double(*));
+void run_calculator(char(*));
+
+int main()
+{
+    /*Vi starter med at oprette en char som vi sætter til at være a*/
+    char running = 'a';
+    /*Grunden til at vi gøre det er så vi har en variable
+    så programmet kun køre indtil vi trykker på q*/
+    while(running != 'q')
+    {
+        /*vi laver en pointer til charen så vi kan ændre på den i vores program*/
+        run_calculator(&running);
+    }
+    return 0;
+}
+
+/*dette er hoved funktion til lommeregnern som gør at scan_data og do_next_op kan tale sammen*/
+void run_calculator(char *run)
+{
+    /*vi opretter  de tre variabler som vi skal bruge i vores program*/
+    char oprator;
+    double hojreOprand,
+           akkumulator = 0;
+    /*her beder vi bruger om at indtaste en oprator, og hvis det vil en oprand*/
+    printf("Enter operator, and an optional operand:");
+    /*dette bliver opsamlede gennem scan_data funktion*/
+    scan_data(&oprator,&hojreOprand);
+    /*her ændre vi vores char, som tjekker om den skal stoppe, til opratoren*/
+    *run = oprator;
+    /*dette er blot så det ikke står på samme linje*/
+    printf("\n");
+
+    /*efter vi har fået opsmaled vores værdier køre vi do_next_op,
+    som ser hvilken regne stykke den skal lave*/
+    do_next_op(&oprator,&hojreOprand,&akkumulator);
+
+    /*alt dette bliver så gjordt indtil bruger indtaster q*/
+
+}
+void scan_data(char *opr, double *hop){
+    /*i denne funktion scanner og sender det tilbage til run_calculator*/
+    double temp;
+    char   oprator;
+
+    scanf(" %c", &oprator);
+    /*her tjekker vi hvilken oprator det er, og hvis den opfylder kravet,
+    scanner vi efter opranden*/
+    if ( oprator == '+' && '-' && '*' && '/' && '^')
+    {
+        scanf( " %lf", &temp);
+    }
+    /*og til sidst sender vi dem tilbage*/
+    *opr = oprator;
+    *hop = temp;
+}
+
+void do_next_op(char *opr, double *tmp, double *aku)
+{
+    /*I denne funktion tjekker gennem en switch case hvilken oprandran det er og laver det regne stykke der til høre den*/
+    switch(*opr)
+    {
+
+    case '+':
+        *aku = *aku + *tmp;
+        printf("The current result is %lf\n",*aku);
+        break;
+
+    case '-':
+        *aku = *aku - *tmp;
+        printf("The current result is %lf\n",*aku);
+        break;
+
+    case '*':
+        *aku = *aku * *tmp;
+        printf("The current result is %lf\n",*aku);
+        break;
+
+    case '/':
+        /*ved nogle af dem som denne tjekker vi om det er muligt at lave renge stykket*/
+        if (*tmp == 0 && *aku == 0)
+        {
+            printf("CAN NOT DIVIDE WITH 0\n");
+            break;
+        }
+        else
+        {
+            *aku = *aku / *tmp;
+            printf("The current result is %lf\n",*aku);
+            break;
+        }
+
+    case '^':
+        *aku = pow(*aku,*tmp);
+        printf("The current result is %lf\n",*aku);
+        break;
+
+    case '#':
+        if (*aku <= 0)
+        {
+            printf("ERROR CAN NOT GET SQUARROOT OF A NIGATIV NUMBER\n");
+            break;
+        }
+        else
+        {
+            *aku = sqrt(*aku);
+            printf("The current result is %lf\n",*aku);
+            break;
+        }
+
+    case '%':
+        *aku = *aku / *tmp;
+        printf("The current result is %lf\n",*aku);
+        break;
+
+    case '!':
+        if (*tmp == 0 && *aku == 0)
+        {
+            printf("CAN NOT DIVIDE WITH 0\n");
+            break;
+        }
+        else
+        {
+            *aku = 1 / *aku;
+            printf("The current result is %lf\n",*aku);
+            break;
+        }
+
+    case 'q':
+        printf("The final result is %lf\n", *aku);
+        break;
+    }
+
+}
+
+
