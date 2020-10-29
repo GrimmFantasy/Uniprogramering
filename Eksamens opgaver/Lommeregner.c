@@ -27,7 +27,7 @@ void run_calculator(char *run)
     /*vi opretter  de tre variabler som vi skal bruge i vores program*/
     char oprator;
     double hojreOprand,
-           akkumulator = 0;
+           akkumulator;
     /*her beder vi bruger om at indtaste en oprator, og hvis det vil en oprand*/
     printf("Enter operator, and an optional operand:");
     /*dette bliver opsamlede gennem scan_data funktion*/
@@ -40,6 +40,8 @@ void run_calculator(char *run)
     /*efter vi har fået opsmaled vores værdier køre vi do_next_op,
     som ser hvilken regne stykke den skal lave*/
     do_next_op(&oprator,&hojreOprand,&akkumulator);
+    /*her efter printer vi resultatet*/
+     printf("The current result is %lf\n", akkumulator);
 
     /*alt dette bliver så gjordt indtil bruger indtaster q*/
 
@@ -47,39 +49,38 @@ void run_calculator(char *run)
 void scan_data(char *opr, double *hop){
     /*i denne funktion scanner og sender det tilbage til run_calculator*/
     double temp;
-    char   oprator;
+    char   op;
 
-    scanf(" %c", &oprator);
+    scanf(" %c", &op);
     /*her tjekker vi hvilken oprator det er, og hvis den opfylder kravet,
     scanner vi efter opranden*/
-    if ( oprator == '+' && '-' && '*' && '/' && '^')
+    if ( op == '+' && '-' && '*' && '/' && '^')
     {
         scanf( " %lf", &temp);
+        *hop = temp;
     }
     /*og til sidst sender vi dem tilbage*/
-    *opr = oprator;
-    *hop = temp;
+    *opr = op;
+
 }
 
 void do_next_op(char *opr, double *tmp, double *aku)
 {
-    /*I denne funktion tjekker gennem en switch case hvilken oprandran det er og laver det regne stykke der til høre den*/
+    /*I denne funktion tjekker gennem en switch case hvilken oprandran det er og laver det regne stykke der til høre den
+    og så sender vi det tilbage til run_calculation*/
     switch(*opr)
     {
 
     case '+':
         *aku = *aku + *tmp;
-        printf("The current result is %lf\n",*aku);
         break;
 
     case '-':
         *aku = *aku - *tmp;
-        printf("The current result is %lf\n",*aku);
         break;
 
     case '*':
         *aku = *aku * *tmp;
-        printf("The current result is %lf\n",*aku);
         break;
 
     case '/':
@@ -92,13 +93,11 @@ void do_next_op(char *opr, double *tmp, double *aku)
         else
         {
             *aku = *aku / *tmp;
-            printf("The current result is %lf\n",*aku);
             break;
         }
 
     case '^':
-        *aku = pow(*aku,*tmp);
-        printf("The current result is %lf\n",*aku);
+        *aku = pow(*aku, *tmp);
         break;
 
     case '#':
@@ -110,17 +109,15 @@ void do_next_op(char *opr, double *tmp, double *aku)
         else
         {
             *aku = sqrt(*aku);
-            printf("The current result is %lf\n",*aku);
             break;
         }
 
     case '%':
         *aku = *aku / *tmp;
-        printf("The current result is %lf\n",*aku);
         break;
 
     case '!':
-        if (*tmp == 0 && *aku == 0)
+        if (*aku == 0)
         {
             printf("CAN NOT DIVIDE WITH 0\n");
             break;
@@ -128,12 +125,10 @@ void do_next_op(char *opr, double *tmp, double *aku)
         else
         {
             *aku = 1 / *aku;
-            printf("The current result is %lf\n",*aku);
             break;
         }
 
     case 'q':
-        printf("The final result is %lf\n", *aku);
         break;
     }
 
