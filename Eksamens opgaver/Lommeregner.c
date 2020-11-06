@@ -1,27 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-/*Her opretter prototyper af det funktion vi får brug for,
-jeg føler at man kunne undlade og bruge do_next_op da jeg man kan  gøre det mere over skuligt med 2*/
+/*Her opretter prototyper af det funktion vi fï¿½r brug for,
+jeg fï¿½ler at man kunne undlade og bruge do_next_op da jeg man kan  gï¿½re det mere over skuligt med 2*/
 void scan_data(char(*), double(*));
 void do_next_op(char(*), double(*), double(*));
 void run_calculator(char(*));
 
 int main()
 {
-    /*Vi starter med at oprette en char som vi sætter til at være a*/
+    /*Vi starter med at oprette en char som vi sï¿½tter til at vï¿½re a*/
     char running = 'a';
-    /*Grunden til at vi gøre det er så vi har en variable
-    så programmet kun køre indtil vi trykker på q*/
+    /*Grunden til at vi gï¿½re det er sï¿½ vi har en variable
+    sï¿½ programmet kun kï¿½re indtil vi trykker pï¿½ q*/
     while(running != 'q')
     {
-        /*vi laver en pointer til charen så vi kan ændre på den i vores program*/
+        /*vi laver en pointer til charen sï¿½ vi kan ï¿½ndre pï¿½ den i vores program*/
         run_calculator(&running);
     }
     return 0;
 }
 
-/*dette er hoved funktion til lommeregnern som gør at scan_data og do_next_op kan tale sammen*/
+/*dette er hoved funktion til lommeregnern som gï¿½r at scan_data og do_next_op kan tale sammen*/
 void run_calculator(char *run)
 {
     /*vi opretter  de tre variabler som vi skal bruge i vores program*/
@@ -31,19 +31,19 @@ void run_calculator(char *run)
     /*her beder vi bruger om at indtaste en oprator, og hvis det vil en oprand*/
     printf("Enter operator, and an optional operand:");
     /*dette bliver opsamlede gennem scan_data funktion*/
-    scan_data(&oprator,&hojreOprand);
-    /*her ændre vi vores char, som tjekker om den skal stoppe, til opratoren*/
+    scan_data(&oprator, &hojreOprand);
+    /*her ï¿½ndre vi vores char, som tjekker om den skal stoppe, til opratoren*/
     *run = oprator;
-    /*dette er blot så det ikke står på samme linje*/
+    /*dette er blot sï¿½ det ikke stï¿½r pï¿½ samme linje*/
     printf("\n");
 
-    /*efter vi har fået opsmaled vores værdier køre vi do_next_op,
+    /*efter vi har fï¿½et opsmaled vores vï¿½rdier kï¿½re vi do_next_op,
     som ser hvilken regne stykke den skal lave*/
     do_next_op(&oprator,&hojreOprand,&akkumulator);
     /*her efter printer vi resultatet*/
      printf("The current result is %lf\n", akkumulator);
 
-    /*alt dette bliver så gjordt indtil bruger indtaster q*/
+    /*alt dette bliver sï¿½ gjordt indtil bruger indtaster q*/
 
 }
 void scan_data(char *opr, double *hop){
@@ -53,7 +53,8 @@ void scan_data(char *opr, double *hop){
 
     scanf(" %c", &op);
     /*her tjekker vi hvilken oprator det er, og hvis den opfylder kravet,
-    scanner vi efter opranden*/
+    scanner vi efter opranden
+    denne ide fik jeg fra en fra min nuvÃ¦rende gruppe ved navn Mads*/
     if ( op == '+' && '-' && '*' && '/' && '^')
     {
         scanf( " %lf", &temp);
@@ -66,8 +67,8 @@ void scan_data(char *opr, double *hop){
 
 void do_next_op(char *opr, double *tmp, double *aku)
 {
-    /*I denne funktion tjekker gennem en switch case hvilken oprandran det er og laver det regne stykke der til høre den
-    og så sender vi det tilbage til run_calculation*/
+    /*I denne funktion tjekker gennem en switch case hvilken oprandran det er og laver det regne stykke der til hï¿½re den
+    og sï¿½ sender vi det tilbage til run_calculation*/
     switch(*opr)
     {
 

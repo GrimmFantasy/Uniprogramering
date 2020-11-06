@@ -75,7 +75,8 @@ double trap(double a, double b, double n, double f(double x))
 
     while (i<=n-1)
     {
-        sum = sum * h;
+        sum = sum + h;
+
         i++;
     }
 
