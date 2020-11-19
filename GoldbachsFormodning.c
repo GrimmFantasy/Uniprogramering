@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <assert.h>
-#include "D:\coolcode\Lib\isPrime.h"
+#include "Lib/isPrime.h"
 
 int main ()
 {
