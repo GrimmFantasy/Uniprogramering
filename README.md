@@ -1,2 +1,2 @@
 # Uniprogramering
-Complete Exercises from courses  
+Completed Exercises from courses  
