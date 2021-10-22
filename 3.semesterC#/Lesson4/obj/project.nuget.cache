@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "JVfDtimJvZ4A63LFzTtfTrikjCZnBnUp8UroYNjE69zfu5y6SaBnIrukzkK6COqJDWU6F2lpT1AU6MravUzchw==",
+  "success": true,
+  "projectFilePath": "/home/casper/Documents/Uniprogramering/3.semesterC#/Lesson4/Lesson4.csproj",
+  "expectedPackageFiles": [
+    "/home/casper/.nuget/packages/microsoft.aspnetcore.app.ref/5.0.0/microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

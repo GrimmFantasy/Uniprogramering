@@ -1,0 +1,16 @@
+/home/casper/Documents/Uniprogramering/3.semesterC#/Lesson4/obj/Debug/net5.0/Lesson4.csprojAssemblyReference.cache
+/home/casper/Documents/Uniprogramering/3.semesterC#/Lesson4/obj/Debug/net5.0/Lesson4.GeneratedMSBuildEditorConfig.editorconfig
+/home/casper/Documents/Uniprogramering/3.semesterC#/Lesson4/obj/Debug/net5.0/Lesson4.AssemblyInfoInputs.cache
+/home/casper/Documents/Uniprogramering/3.semesterC#/Lesson4/obj/Debug/net5.0/Lesson4.AssemblyInfo.cs
+/home/casper/Documents/Uniprogramering/3.semesterC#/Lesson4/obj/Debug/net5.0/Lesson4.csproj.CoreCompileInputs.cache
+/home/casper/Documents/Uniprogramering/3.semesterC#/Lesson4/bin/Debug/net5.0/Lesson4
+/home/casper/Documents/Uniprogramering/3.semesterC#/Lesson4/bin/Debug/net5.0/Lesson4.deps.json
+/home/casper/Documents/Uniprogramering/3.semesterC#/Lesson4/bin/Debug/net5.0/Lesson4.runtimeconfig.json
+/home/casper/Documents/Uniprogramering/3.semesterC#/Lesson4/bin/Debug/net5.0/Lesson4.runtimeconfig.dev.json
+/home/casper/Documents/Uniprogramering/3.semesterC#/Lesson4/bin/Debug/net5.0/Lesson4.dll
+/home/casper/Documents/Uniprogramering/3.semesterC#/Lesson4/bin/Debug/net5.0/ref/Lesson4.dll
+/home/casper/Documents/Uniprogramering/3.semesterC#/Lesson4/bin/Debug/net5.0/Lesson4.pdb
+/home/casper/Documents/Uniprogramering/3.semesterC#/Lesson4/obj/Debug/net5.0/Lesson4.dll
+/home/casper/Documents/Uniprogramering/3.semesterC#/Lesson4/obj/Debug/net5.0/ref/Lesson4.dll
+/home/casper/Documents/Uniprogramering/3.semesterC#/Lesson4/obj/Debug/net5.0/Lesson4.pdb
+/home/casper/Documents/Uniprogramering/3.semesterC#/Lesson4/obj/Debug/net5.0/Lesson4.genruntimeconfig.cache
